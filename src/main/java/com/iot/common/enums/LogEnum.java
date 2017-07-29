@@ -5,13 +5,13 @@ import java.io.Serializable;
  * Created by TIANCHENGYUAN103 on 2015-12-04.
  */
 public enum LogEnum implements Serializable {
-	SERVER_START(1,"·þÎñÆ÷Æô¶¯"),
-    SERVER_EXIT(2,"·þÎñÆ÷¹Ø±Õ"),
-    CLIENT_CONNECTION(3,"¿Í»§¶ËÁ¬½Ó"),
-    CLIENT_BREAK(4,"¿Í»§¶ËÍøÂçÁ¬½ÓÖÐ¶Ï"),
-    READER_START(5,"Æô¶¯Êý¾Ý¶ÁÈ¡"),
-    READER_SHUTDOWN(6,"¹Ø±ÕÊý¾Ý¶ÁÈ¡"),
-    DATA_SAVE(7,"Ö´ÐÐÊý¾Ý´æ´¢")
+	SERVER_START(1,"æœåŠ¡å™¨å¯åŠ¨"),
+    SERVER_EXIT(2,"æœåŠ¡å™¨å…³é—­"),
+    CLIENT_CONNECTION(3,"å®¢æˆ·ç«¯è¿žæŽ¥"),
+    CLIENT_BREAK(4,"å®¢æˆ·ç«¯ç½‘ç»œè¿žæŽ¥ä¸­æ–­"),
+    READER_START(5,"å¯åŠ¨æ•°æ®è¯»å–"),
+    READER_SHUTDOWN(6,"å…³é—­æ•°æ®è¯»å–"),
+    DATA_SAVE(7,"æ‰§è¡Œæ•°æ®å­˜å‚¨")
     ;
     private int code;
     private String label;
