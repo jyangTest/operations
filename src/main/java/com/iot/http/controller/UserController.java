@@ -7,9 +7,11 @@ import com.iot.http.service.UserService;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,18 +29,19 @@ public class UserController {
 
     @RequestMapping(value = "/getUserList",method = RequestMethod.GET)
     @ResponseBody
-    public DataWrapper<List<User>> getUserList(){
+    public DataWrapper<List<User>> getUserList(HttpServletResponse response){
         return userService.getUserList();
     }
     @RequestMapping(value = "/addUser",method = RequestMethod.POST)
     @ResponseBody
-    public DataWrapper<Void> addUser(@ModelAttribute User user){
+    public DataWrapper<Void> addUser(HttpServletResponse response,@ModelAttribute User user){
         return userService.addUser(user);
     }
     @RequestMapping(value="/login", method = RequestMethod.POST)
     @ResponseBody
     public DataWrapper<User> Login(
     		HttpServletRequest request,
+    		HttpServletResponse response,
     		@RequestParam(value="userName",required=true) String userName,
     		@RequestParam(value="password",required=true) String password
     		) {

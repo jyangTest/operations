@@ -21,7 +21,7 @@ public class LoadDataInStream {
 
     private Connection conn;
 //    private static final Logger logger = Logger.getLogger(LoadDataInStream.class);
-
+//load date loacl infile 'sql.csbv '
     public int write(String table, List<String[]> fields, String fieldName) {
         String sql = "LOAD DATA LOCAL INFILE 'sql.csv' IGNORE INTO TABLE `" + table + "` (" + fieldName + ")";
         InputStream dataStream = getTestDataInputStream(fields);
@@ -39,7 +39,6 @@ public class LoadDataInStream {
 
     private InputStream getTestDataInputStream(List<String[]> fields) {
         StringBuilder builder = new StringBuilder();
-
         for (String[] field : fields) {
             for (int i = 0; i < field.length; i++) {
                 builder.append(field[i]);
@@ -54,7 +53,7 @@ public class LoadDataInStream {
         byte[] bytes = builder.toString().getBytes();
         return new ByteArrayInputStream(bytes);
     }
-
+ 
     /**
      * load bulk data from InputStream to MySQL
      */
