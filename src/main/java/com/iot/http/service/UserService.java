@@ -12,7 +12,9 @@ import com.iot.http.entity.User;
 public interface UserService {
 	DataWrapper<List<User>> getUserList();
 
-	DataWrapper<Void> addUser(User user);
+	DataWrapper<Void> addUser(User user,String token);
 
 	DataWrapper<User> login(String userName, String password);
+	
+	DataWrapper<Void> updateUser(User user,String token);
 }

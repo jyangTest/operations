@@ -17,6 +17,8 @@ public interface UserDao {
 	List<User> getUserList();
 
 	boolean addUser(User user);
-	
+	User getUserByid(String id);
 	User login(User user);
+	
+	boolean updateUser(User user);
 }

@@ -32,10 +32,23 @@ public class UserController {
     public DataWrapper<List<User>> getUserList(HttpServletResponse response){
         return userService.getUserList();
     }
+    @RequestMapping(value ="/updateUser", method= RequestMethod.POST)
+    @ResponseBody
+    public DataWrapper<Void> updateUser(
+    			@ModelAttribute User user,
+    			@RequestParam(value="token",required=true)String  token,
+    			HttpServletRequest request,
+    			HttpServletResponse response){
+    			return userService.updateUser(user,token);
+    }
+    
+    
+    
     @RequestMapping(value = "/addUser",method = RequestMethod.POST)
     @ResponseBody
-    public DataWrapper<Void> addUser(HttpServletResponse response,@ModelAttribute User user){
-        return userService.addUser(user);
+    public DataWrapper<Void> addUser(HttpServletResponse response,@ModelAttribute User user,
+    		@RequestParam(value="token",required=true)String  token){
+        return userService.addUser(user,token);
     }
     @RequestMapping(value="/login", method = RequestMethod.POST)
     @ResponseBody

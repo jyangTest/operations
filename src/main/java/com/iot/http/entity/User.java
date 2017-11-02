@@ -6,7 +6,7 @@ import org.apache.ibatis.type.Alias;
 
 @Alias("User")
 public class User {
-	private int id;
+	private String id;
 	private String userName;
 	private String password;
 	private Date registerDate;
@@ -17,7 +17,7 @@ public class User {
 	public User(){
 		
 	}
-	public User(int id, String userName, String password, Date registerDate, String realName, String email, String tel,
+	public User(String id, String userName, String password, Date registerDate, String realName, String email, String tel,
 			int userType) {
 		this.id = id;
 		this.userName = userName;
@@ -28,10 +28,11 @@ public class User {
 		this.tel = tel;
 		this.userType = userType;
 	}
-	public int getId() {
+	
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getUserName() {
